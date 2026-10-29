@@ -1,0 +1,225 @@
+:root {
+  --bg: #d9e7dd;
+  --screen: #f6faf5;
+  --ink: #0f2a20;
+  --muted: #5b7266;
+  --green: #1f7a4d;
+  --deep: #0f3d2e;
+  --mint: #bfe8cc;
+  --coin: #f2a93b;
+  --blue: #2d6cdf;
+  --late: #d9534f;
+  --line: #dbe6de;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+}
+
+/* Phone frame */
+.phone {
+  position: relative;
+  width: 375px;
+  height: 780px;
+  max-height: 100vh;
+  background: var(--screen);
+  border: 10px solid #111;
+  border-radius: 44px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 60px rgba(15, 61, 46, .25);
+}
+
+.notch {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 120px; height: 24px;
+  background: #111;
+  border-radius: 0 0 16px 16px;
+  z-index: 5;
+}
+
+.screens { flex: 1; position: relative; overflow: hidden; }
+
+.screen {
+  display: none;
+  height: 100%;
+  padding: 44px 20px 16px;
+  overflow-y: auto;
+  flex-direction: column;
+  gap: 14px;
+}
+.screen.active { display: flex; animation: swap .25s ease; }
+
+@keyframes swap { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: none; } }
+
+/* Home */
+.home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  margin: -44px -20px -16px;
+  padding: 44px 28px 16px;
+  background: var(--deep);
+  color: #fff;
+}
+.logo {
+  width: 96px; height: 96px;
+  display: grid; place-items: center;
+  border-radius: 28px;
+  background: var(--mint);
+  color: var(--deep);
+}
+.logo svg { width: 64px; height: 64px; }
+.home h1 { font-size: 40px; letter-spacing: -1px; margin-top: 8px; }
+.slogan { font-size: 17px; color: var(--mint); font-weight: 600; }
+.hint { font-size: 13px; opacity: .7; margin-top: 18px; }
+
+/* Buttons */
+.cta {
+  border: 0;
+  background: var(--coin);
+  color: #3a2500;
+  font: inherit;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.cta.ghost {
+  background: var(--deep);
+  color: #fff;
+  width: 100%;
+  margin-top: auto;
+}
+.mini {
+  border: 1px solid var(--green);
+  background: none;
+  color: var(--green);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+/* Headers */
+header { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+h2 { font-size: 28px; letter-spacing: -.5px; }
+.lead { font-size: 15px; color: var(--muted); line-height: 1.45; }
+.note { font-size: 13px; color: var(--muted); line-height: 1.45; }
+
+.chip {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.c-money { background: #fdebc8; color: #7a4a00; }
+.c-time  { background: #d8e5fb; color: #1b4aa0; }
+.c-save  { background: var(--mint); color: var(--deep); }
+
+/* Cards */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+}
+small { display: block; font-size: 12px; color: var(--muted); }
+.row { display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; }
+.row.small { font-size: 12px; font-weight: 400; color: var(--muted); margin-top: 8px; }
+
+/* RicicloShop */
+.wallet { display: flex; align-items: center; justify-content: space-around; text-align: center; }
+.wallet strong { font-size: 30px; }
+.wallet > div:last-child strong { color: var(--coin); }
+.eq { font-size: 24px; color: var(--muted); }
+.bar { height: 10px; background: var(--line); border-radius: 99px; margin-top: 10px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--green); border-radius: 99px; }
+.points { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.4; }
+.points li { padding-left: 14px; border-left: 3px solid var(--mint); }
+
+/* ControllaTempo */
+.form { display: flex; flex-direction: column; gap: 10px; }
+.form label { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.form label:last-child { border: 0; padding: 0; }
+.form span { color: var(--ink); font-weight: 600; }
+.arrival { display: flex; justify-content: space-between; align-items: center; }
+.arrival strong { font-size: 34px; color: var(--blue); }
+.late {
+  font-size: 12px; font-weight: 700;
+  color: var(--late);
+  background: #fbe3e2;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+/* EcoScambio */
+.items { display: flex; flex-direction: column; gap: 10px; }
+.item { display: flex; align-items: center; gap: 12px; padding: 10px; }
+.item > div:nth-child(2) { flex: 1; }
+.item b { font-size: 14px; }
+.thumb { width: 46px; height: 46px; border-radius: 12px; }
+.t1 { background: var(--green); }
+.t2 { background: var(--coin); }
+.t3 { background: var(--blue); }
+
+/* EcoPercorso */
+.dest { display: flex; justify-content: space-between; align-items: center; }
+.routes { display: flex; flex-direction: column; gap: 10px; }
+.route { display: flex; justify-content: space-between; align-items: center; border-left-width: 5px; border-left-color: var(--blue); }
+.route.green { border-left-color: var(--green); }
+.route.best { border-left-color: var(--coin); background: #fffaf0; }
+.route b { font-size: 14px; }
+.r { text-align: right; }
+.r strong { font-size: 20px; display: block; }
+
+/* Bottom nav */
+.tabs {
+  display: flex;
+  border-top: 1px solid var(--line);
+  background: #fff;
+  padding: 8px 4px 14px;
+}
+.tab {
+  flex: 1;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+.tab svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tab.active { color: var(--green); font-weight: 700; }
+
+.tab:focus-visible, .cta:focus-visible, .mini:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) { .screen.active { animation: none; } }
+
+/* Su telefono vero: schermo intero senza cornice */
+@media (max-width: 420px) {
+  .phone { width: 100%; height: 100vh; border: 0; border-radius: 0; }
+  .notch { display: none; }
+  .screen { padding-top: 24px; }
+  .home { margin-top: -24px; padding-top: 24px; }
+}

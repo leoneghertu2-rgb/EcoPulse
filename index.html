@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EcoPulse</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone">
+  <div class="notch"></div>
+
+  <main class="screens">
+
+    <!-- HOME -->
+    <section class="screen active" data-tab="0">
+      <div class="home">
+        <div class="logo">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="4"/>
+            <path d="M10 34h13l5-14 8 26 6-16h12" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h1>EcoPulse</h1>
+        <p class="slogan">Velocizza, Guadagna, Risparmia</p>
+        <p class="hint">Scorri le 4 funzioni dell'app</p>
+        <button class="cta" data-go="1">Scopri cosa fa</button>
+      </div>
+    </section>
+
+    <!-- RICICLOSHOP -->
+    <section class="screen" data-tab="1">
+      <header><span class="chip c-money">Guadagna</span><h2>RicicloShop</h2></header>
+      <p class="lead">Guadagni ogni volta che butti qualcosa via.</p>
+
+      <div class="card wallet">
+        <div>
+          <small>I tuoi punti</small>
+          <strong>50</strong>
+        </div>
+        <div class="eq">=</div>
+        <div>
+          <small>Da riscattare</small>
+          <strong>1,00 &euro;</strong>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row"><span>Livello 3</span><span>7 / 10 oggetti</span></div>
+        <div class="bar"><i style="width:70%"></i></div>
+        <div class="row small"><span>Punto attuale: 2 centesimi</span><span>+1 al livello 4</span></div>
+      </div>
+
+      <ul class="points">
+        <li>Ogni oggetto buttato vale <b>1 punto</b>, cioè 2 centesimi.</li>
+        <li>Ogni <b>10 oggetti</b> sali di un livello.</li>
+        <li>Ogni <b>2 livelli</b> il guadagno per punto aumenta di 1 centesimo.</li>
+      </ul>
+      <button class="cta ghost">Riscatta i punti</button>
+    </section>
+
+    <!-- CONTROLLATEMPO -->
+    <section class="screen" data-tab="2">
+      <header><span class="chip c-time">Velocizza</span><h2>ControllaTempo</h2></header>
+      <p class="lead">Niente più attese in stazione: guarda l'app e sai quando arriva.</p>
+
+      <div class="card form">
+        <label>Stazione<span>Stazione Centrale</span></label>
+        <label>Direzione<span>Verso il centro</span></label>
+        <label>Numero del treno<span>Facoltativo</span></label>
+      </div>
+
+      <div class="card arrival">
+        <div>
+          <small>Prossimo arrivo</small>
+          <strong>4 min</strong>
+        </div>
+        <span class="late">In ritardo di 3 min</span>
+      </div>
+
+      <p class="note">Funziona con metro, bus e treni, se le stazioni scelgono di attivare il servizio.</p>
+    </section>
+
+    <!-- ECOSCAMBIO -->
+    <section class="screen" data-tab="3">
+      <header><span class="chip c-save">Risparmia</span><h2>EcoScambio</h2></header>
+      <p class="lead">Regala o scambia ciò che non usi con persone della tua città.</p>
+
+      <div class="items">
+        <article class="card item">
+          <div class="thumb t1"></div>
+          <div><b>Vecchio zaino</b><small>Regalo &middot; a 1,2 km</small></div>
+          <button class="mini">Richiedi</button>
+        </article>
+        <article class="card item">
+          <div class="thumb t2"></div>
+          <div><b>Lampada da scrivania</b><small>Scambio &middot; a 800 m</small></div>
+          <button class="mini">Richiedi</button>
+        </article>
+        <article class="card item">
+          <div class="thumb t3"></div>
+          <div><b>Libri di scuola</b><small>Regalo &middot; a 2,5 km</small></div>
+          <button class="mini">Richiedi</button>
+        </article>
+      </div>
+
+      <p class="note">Meno rifiuti, meno soldi spesi per comprare nuovo.</p>
+      <button class="cta ghost">Pubblica un oggetto</button>
+    </section>
+
+    <!-- ECOPERCORSO -->
+    <section class="screen" data-tab="4">
+      <header><span class="chip c-time">Velocizza</span><h2>EcoPercorso</h2></header>
+      <p class="lead">Il più veloce non è sempre il più ecologico. Confronta e scegli.</p>
+
+      <div class="card dest"><small>Destinazione</small><b>Scuola</b></div>
+
+      <div class="routes">
+        <div class="card route">
+          <div><b>Più veloce</b><small>Traffico medio</small></div>
+          <div class="r"><strong>18 min</strong><small>420 g CO&#8322;</small></div>
+        </div>
+        <div class="card route green">
+          <div><b>Più ecologico</b><small>Bici e a piedi</small></div>
+          <div class="r"><strong>27 min</strong><small>0 g CO&#8322;</small></div>
+        </div>
+        <div class="card route best">
+          <div><b>Miglior compromesso</b><small>Bus + 5 min a piedi</small></div>
+          <div class="r"><strong>21 min</strong><small>90 g CO&#8322;</small></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="tabs">
+    <button class="tab active" data-go="0">
+      <svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>Home
+    </button>
+    <button class="tab" data-go="1">
+      <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 5v8m-3-3 3 3 3-3"/></svg>Ricicla
+    </button>
+    <button class="tab" data-go="2">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Tempo
+    </button>
+    <button class="tab" data-go="3">
+      <svg viewBox="0 0 24 24"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg>Scambio
+    </button>
+    <button class="tab" data-go="4">
+      <svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h6"/></svg>Percorso
+    </button>
+  </nav>
+</div>
+
+<script>
+  const screens = document.querySelectorAll('.screen');
+  const tabs = document.querySelectorAll('.tab');
+  function go(i) {
+    screens.forEach(s => s.classList.toggle('active', +s.dataset.tab === i));
+    tabs.forEach(t => t.classList.toggle('active', +t.dataset.go === i));
+  }
+  document.querySelectorAll('[data-go]').forEach(b =>
+    b.addEventListener('click', () => go(+b.dataset.go))
+  );
+</script>
+
+</body>
+</html>
