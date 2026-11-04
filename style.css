@@ -226,7 +226,6 @@ small { display: block; font-size: 12px; color: var(--muted); }
 }
 
 /* Logo (immagine) */
-.logo { width: 150px; height: auto; border-radius: 0; background: none; display: block; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 /* Selettore anteprima */
@@ -274,6 +273,6 @@ small { display: block; font-size: 12px; color: var(--muted); }
   body.laptop .screen > .cta.ghost, body.laptop .screen > .note { grid-column: 1 / -1; }
   body.laptop .cta.ghost { width: auto; justify-self: start; margin-top: 0; }
   body.laptop .home { grid-column: 1 / -1; margin: -32px -40px; padding: 32px; min-height: calc(100% + 64px); }
-  body.laptop .logo { width: 190px; }
+  body.laptop .logo { width: 120px; height: 120px; }
 }
 @media (max-width: 799px) { .switch { display: none; } body { padding-top: 0; } }
