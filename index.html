@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<div class="switch" role="group" aria-label="Anteprima">
+  <button class="on" data-view="phone">Telefono</button>
+  <button data-view="laptop">Laptop</button>
+</div>
+
+<div class="device">
 <div class="phone">
   <div class="notch"></div>
 
@@ -16,13 +22,8 @@
     <!-- HOME -->
     <section class="screen active" data-tab="0">
       <div class="home">
-        <div class="logo">
-          <svg viewBox="0 0 64 64" aria-hidden="true">
-            <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="4"/>
-            <path d="M10 34h13l5-14 8 26 6-16h12" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h1>EcoPulse</h1>
+        <img class="logo" src="logo.png" alt="EcoPulse">
+        <h1 class="sr">EcoPulse</h1>
         <p class="slogan">Velocizza, Guadagna, Risparmia</p>
         <p class="hint">Scorri le 4 funzioni dell'app</p>
         <button class="cta" data-go="1">Scopri cosa fa</button>
@@ -152,6 +153,7 @@
     </button>
   </nav>
 </div>
+</div>
 
 <script>
   const screens = document.querySelectorAll('.screen');
@@ -162,6 +164,13 @@
   }
   document.querySelectorAll('[data-go]').forEach(b =>
     b.addEventListener('click', () => go(+b.dataset.go))
+  );
+
+  document.querySelectorAll('[data-view]').forEach(b =>
+    b.addEventListener('click', () => {
+      document.body.classList.toggle('laptop', b.dataset.view === 'laptop');
+      document.querySelectorAll('[data-view]').forEach(x => x.classList.toggle('on', x === b));
+    })
   );
 </script>
 
